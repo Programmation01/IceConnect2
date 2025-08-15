@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Récapitulatif de commande</title>
+    <!-- Inclure Tailwind CSS pour le style -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuration de la couleur personnalisée -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-red': '#d11d38',
+                        'custom-red-light': '#fef2f2',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white flex flex-col items-center p-4 pb-24">
+
+    <!-- Conteneur principal pour centrer le contenu -->
+    <div class="w-full max-w-md">
+        <!-- En-tête de la page -->
+        <h1 class="text-4xl font-extrabold text-custom-red uppercase text-center mb-6 mt-4">
+            RÉCAPITULATIF
+        </h1>
+
+        <!-- Carte de la 1ère commande -->
+        <div class="bg-white border-4 border-custom-red rounded-3xl p-4 mb-4 relative shadow-lg">
+            <div class="flex justify-between items-start mb-2">
+                <h2 class="text-2xl font-bold text-custom-red italic">1er commande</h2>
+                <button onclick="location.href='Page-produit.html'"
+                    class="py-1 px-4 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-sm uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    MODIFIER LA COMMANDE
+                </button>
+            </div>
+            <div class="space-y-1 text-lg">
+                <p><span class="font-bold text-custom-red uppercase">PRODUIT :</span> GLACE</p>
+                <p><span class="font-bold text-custom-red uppercase">BASE :</span> CORNET</p>
+                <p><span class="font-bold text-custom-red uppercase">PARFUMS :</span> VANILLE, NUTELLA</p>
+                <p><span class="font-bold text-custom-red uppercase">NOMBRES DE BOULE :</span> 2</p>
+                <p><span class="font-bold text-custom-red uppercase">SUPPLÉMENTS :</span> CHANTILLY</p>
+                <p><span class="font-bold text-custom-red uppercase">PRIX :</span> 6,50 €</p>
+            </div>
+        </div>
+
+        <!-- Carte de la 2ème commande -->
+        <div class="bg-white border-4 border-custom-red rounded-3xl p-4 mb-8 relative shadow-lg">
+            <div class="flex justify-between items-start mb-2">
+                <h2 class="text-2xl font-bold text-custom-red italic">2eme commande</h2>
+                <button onclick="location.href='Page-produit.html'"
+                    class="py-1 px-4 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-sm uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    MODIFIER LA COMMANDE
+                </button>
+            </div>
+            <div class="space-y-1 text-lg">
+                <p><span class="font-bold text-custom-red uppercase">PRODUIT :</span> GLACE</p>
+                <p><span class="font-bold text-custom-red uppercase">BASE :</span> CORNET</p>
+                <p><span class="font-bold text-custom-red uppercase">PARFUMS :</span> VANILLE, NUTELLA</p>
+                <p><span class="font-bold text-custom-red uppercase">NOMBRES DE BOULE :</span> 2</p>
+                <p><span class="font-bold text-custom-red uppercase">SUPPLÉMENTS :</span> CHANTILLY</p>
+                <p><span class="font-bold text-custom-red uppercase">PRIX :</span> 6,50 €</p>
+            </div>
+        </div>
+
+        <!-- Boutons d'action -->
+        <div class="flex flex-col space-y-4 mb-8">
+            <button onclick="location.href='Page-produit.html'"
+                class="py-4 px-6 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                AJOUTER UNE NOUVELLE COMMANDE
+            </button>
+            <button onclick="history.back()"
+                class="py-4 px-6 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                RETOUR
+            </button>
+        </div>
+
+        <!-- Section Total -->
+        <div class="bg-white border-4 border-custom-red rounded-3xl p-4 mb-8 relative shadow-lg">
+            <h2 class="text-2xl font-bold text-custom-red italic mb-2">TOTAL TTC :</h2>
+            <p class="text-xl"><span class="font-bold text-custom-red uppercase">PRIX :</span> 13 €</p>
+        </div>
+
+    </div>
+
+    <!-- Bouton Valider flottant -->
+    <div class="fixed bottom-4 w-full max-w-md px-4">
+        <button onclick="location.href='Page-paiement.html'"
+            class="w-full py-5 px-6 bg-custom-red rounded-full text-white font-bold text-xl uppercase transition duration-300 ease-in-out hover:bg-custom-red focus:outline-none">
+            VALIDER LA COMMANDE
+        </button>
+    </div>
+
+</body>
+</html>

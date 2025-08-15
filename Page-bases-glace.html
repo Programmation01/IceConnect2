@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choix de Récipient</title>
+    <!-- Inclure Tailwind CSS pour le style -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuration de la couleur personnalisée -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-red': '#d11d38',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white flex flex-col items-center p-4">
+
+    <!-- Conteneur principal pour centrer le contenu -->
+    <div class="w-full max-w-md">
+        <!-- En-tête de la page -->
+        <div class="flex justify-between items-center mb-6 mt-4">
+            <h1 class="text-4xl font-extrabold text-custom-red uppercase">
+                GLACE
+            </h1>
+            <button onclick="history.back()"
+                class="py-2 px-6 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                RETOUR
+            </button>
+        </div>
+
+        <!-- Section des options de récipients -->
+        <div class="flex flex-col space-y-6">
+            <!-- Option 1: POT -->
+            <div class="flex flex-col items-center">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="pot.png" alt="Glace dans un pot" class="w-full h-auto">
+                </div>
+                <button onclick="location.href='Page-parfums-glace.html'"
+                    class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    POT
+                </button>
+            </div>
+
+            <!-- Option 2: CORNET -->
+            <div class="flex flex-col items-center">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="cornet.png" alt="Glace dans un cornet" class="w-full h-auto">
+                </div>
+                <button onclick="location.href='Page-choix-cornet-glace.html'"
+                    class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    CORNET
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

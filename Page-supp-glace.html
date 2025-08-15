@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glace - Suppléments</title>
+    <!-- Inclure Tailwind CSS pour le style -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuration de la couleur personnalisée -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-red': '#d11d38',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white flex flex-col items-center p-4 pb-24">
+
+    <!-- Conteneur principal pour centrer le contenu -->
+    <div class="w-full max-w-md">
+        <!-- En-tête de la page -->
+        <div class="flex justify-between items-center mb-6 mt-4">
+            <h1 class="text-4xl font-extrabold text-custom-red uppercase">
+                GLACE - SUPPLÉMENT
+            </h1>
+            <button onclick="history.back()"
+                class="py-2 px-6 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                RETOUR
+            </button>
+        </div>
+
+        <!-- Grille des produits -->
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Supplément 1: Aucun -->
+            <div id="supplement-aucun" class="supplement-item flex flex-col items-center relative cursor-pointer">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="aucun.png" alt="Aucun supplément" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    AUCUN
+                </button>
+            </div>
+
+            <!-- Supplément 2: Chantilly Vanille -->
+            <div id="supplement-chantilly-vanille" class="supplement-item flex flex-col items-center relative cursor-pointer">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="chantilly-vanille.png" alt="Chantilly Vanille" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    CHANTILLY VANILLE
+                </button>
+            </div>
+
+            <!-- Supplément 3: Chantilly Caramel -->
+            <div id="supplement-chantilly-caramel" class="supplement-item flex flex-col items-center relative cursor-pointer">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="chantilly-caramel.png" alt="Chantilly Caramel" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    CHANTILLY CARAMEL
+                </button>
+            </div>
+            
+            <!-- Supplément 4: Coulis Caramel -->
+            <div id="supplement-coulis-caramel" class="supplement-item flex flex-col items-center relative cursor-pointer">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="coulis-caramel.png" alt="Coulis Caramel" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    COULIS CARAMEL
+                </button>
+            </div>
+             <!-- Supplément 5: Coulis Chocolat -->
+            <div id="supplement-coulis-chocolat" class="supplement-item flex flex-col items-center relative cursor-pointer">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="coulis-chocolat.png" alt="Coulis Chocolat" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    COULIS CHOCOLAT
+                </button>
+            </div>
+             <!-- Supplément 6: Coulis Nutella -->
+            <div id="supplement-coulis-nutella" class="supplement-item flex flex-col items-center relative cursor-pointer">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="coulis-nutella.png" alt="Coulis Nutella" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    COULIS NUTELLA
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bouton Continuer flottant -->
+    <div class="fixed bottom-4 w-full max-w-md px-4">
+        <button onclick="location.href='Page-recap.html'"
+            class="w-full py-5 px-6 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-xl uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+            CONTINUER
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const supplementItems = document.querySelectorAll('.supplement-item');
+
+            supplementItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const checkboxSpan = item.querySelector('.checkbox span');
+                    checkboxSpan.classList.toggle('hidden');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glace - Parfums</title>
+    <!-- Inclure Tailwind CSS pour le style -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuration de la couleur personnalisée -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-red': '#d11d38',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white flex flex-col items-center p-4 pb-24">
+
+    <!-- Conteneur principal pour centrer le contenu -->
+    <div class="w-full max-w-md">
+        <!-- En-tête de la page -->
+        <div class="flex justify-between items-center mb-6 mt-4">
+            <h1 class="text-4xl font-extrabold text-custom-red uppercase">
+                GLACE - PARFUMS
+            </h1>
+            <button onclick="history.back()"
+                class="py-2 px-6 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                RETOUR
+            </button>
+        </div>
+
+        <!-- Grille des produits -->
+        <div class="grid grid-cols-2 gap-4">
+                        <!-- Parfum 1: Abricot -->
+            <div id="parfum-Abricot" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Abricot.png" alt="Parfum Abricot" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    ABRICOT
+                </button>
+            </div>
+
+            <!-- Parfum 2: Amaréna -->
+            <div id="parfum-Amarena" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Amaréna.png" alt="Parfum Amarena" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    AMARÉNA
+                </button>
+            </div>
+
+            <!-- Parfum 3: Ananas -->
+            <div id="parfum-Ananas" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Ananas.png" alt="Parfum Ananas" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    ANANAS
+                </button>
+            </div>
+
+            <!-- Parfum 4: Banane -->
+            <div id="parfum-banane" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="banane.png" alt="Parfum banane" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    BANANE
+                </button>
+            </div>
+             <!-- Parfum 5: Cafe -->
+            <div id="parfum-Cafe" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Cafe.png" alt="Parfum Cafe" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    CAFÉ
+                </button>
+            </div>
+             <!-- Parfum 6: Cappucino -->
+            <div id="parfum-Cappucino" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Cappucino.png" alt="Parfum Cappucino" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    CAPPUCCINO
+                </button>
+            </div>
+            <!-- Parfum 7: Caramel Beurre salé -->
+            <div id="parfum-Caramel-Beurre-salé" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Caramel-Beurre-salé.png" alt="Parfum Caramel Beurre salé" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    CARAMEL BEURRE SALÉ
+                </button>
+            </div>
+            <!-- Parfum 8: Cassis -->
+            <div id="parfum-Cassis" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Cassis.png" alt="Parfum Cassis" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    CASSIS
+                </button>
+            </div>
+            <!-- Parfum 9: Chocolat blanc -->
+            <div id="parfum-Chocolat-blanc" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Chocolat-blanc.png" alt="Parfum Chocolat blanc" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    CHOCOLAT-BLANC
+                </button>
+            </div>
+            <!-- Parfum 10: Chocolat -->
+            <div id="parfum-Chocolat" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Chocolat.png" alt="Parfum Chocolat" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    CHOCOLAT
+                </button>
+            </div>
+
+            <!-- Parfum 11: Citron vert -->
+            <div id="parfum-Citron-vert" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Citron-vert.png" alt="Parfum Citron vert" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    CITRON VERT
+                </button>
+            </div>
+
+            <!-- Parfum 12: Citron -->
+            <div id="parfum-Citron" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Citron.png" alt="Parfum Citron" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    CITRON
+                </button>
+            </div>
+
+            <!-- Parfum 13: Coco -->
+            <div id="parfum-Coco" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Coco.png" alt="Parfum Coco" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    COCO
+                </button>
+            </div>
+
+            <!-- Parfum 14: Cookie -->
+            <div id="parfum-Extra-noir" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Extra-noir.png" alt="Parfum Extra-noir" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    EXTRA-NOIR
+                </button>
+            </div>
+
+            <!-- Parfum 15: Fraise -->
+            <div id="parfum-Fraise" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Fraise.png" alt="Parfum Fraise" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    FRAISE
+                </button>
+            </div>
+
+            <!-- Parfum 16: framboise -->
+            <div id="parfum-framboise" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="framboise.png" alt="Parfum Framboise" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    FRAMBOISE
+                </button>
+            </div>
+
+            <!-- Parfum 17: Grenade -->
+            <div id="parfum-grenade" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="grenade.png" alt="Parfum Grenade" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    GRENADE
+                </button>
+            </div>
+
+            <!-- Parfum 18: Kinder -->
+            <div id="parfum-Kinder" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Kinder.png" alt="Parfum Kinder" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    KINDER
+                </button>
+            </div>
+
+            <!-- Parfum 19: Kiwi -->
+            <div id="parfum-Kiwi" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Kiwi.png" alt="Parfum Kiwi" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    KIWI
+                </button>
+            </div>
+
+            <!-- Parfum 20: Letchi -->
+            <div id="parfum-Letchi" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Letchi.png" alt="Parfum Letchi" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    LETCHI
+                </button>
+            </div>
+
+            <!-- Parfum 21: Macadamia -->
+            <div id="parfum-Macadamia" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Macadamia.png" alt="Parfum Macadamia" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    MACADAMIA
+                </button>
+            </div>
+
+            <!-- Parfum 22: Mandarine -->
+            <div id="parfum-Mandarine" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Mandarine.png" alt="Parfum Mandarine" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    MANDARINE
+                </button>
+            </div>
+
+            <!-- Parfum 23: Mangue -->
+            <div id="parfum-Mangue" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Mangue.png" alt="Parfum Mangue" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    MANGUE
+                </button>
+            </div>
+
+            <!-- Parfum 24: Marron -->
+            <div id="parfum-Marron" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Marron.png" alt="Parfum Marron" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    MARRON
+                </button>
+            </div>
+
+            <!-- Parfum 25: Melon -->
+            <div id="parfum-Melon" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Melon.png" alt="Parfum Melon" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    MELON
+                </button>
+            </div>
+
+            <!-- Parfum 26: Menthe-chocolat -->
+            <div id="parfum-Menthe-chocolat" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Menthe-chocolat.png" alt="Parfum Menthe-chocolat" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    MENTHE-CHOCOLAT
+                </button>
+            </div>
+
+            <!-- Parfum 27: Mûre -->
+            <div id="parfum-Mure" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Mûre.png" alt="Parfum Mûre" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    MÛRE
+                </button>
+            </div>
+
+            <!-- Parfum 28: Nougat -->
+            <div id="parfum-Nougat" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Nougat.png" alt="Parfum Nougat" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    NOUGAT
+                </button>
+            </div>
+
+            <!-- Parfum 29: Nutella -->
+            <div id="parfum-Nutella" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Nutella.png" alt="Parfum Nutella" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    NUTELLA
+                </button>
+            </div>
+
+            <!-- Parfum 30: Oreo -->
+            <div id="parfum-Oreo" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Oreo.png" alt="Parfum Oreo" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    OREO
+                </button>
+            </div>
+
+            <!-- Parfum 31: Passion -->
+            <div id="parfum-Passion" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Passion.png" alt="Parfum Passion" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    PASSION
+                </button>
+            </div>
+
+            <!-- Parfum 32: Pêche de vigne -->
+            <div id="parfum-Peche-de-Vigne" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Peche-de-Vigne.png" alt="Parfum Pêche de vigne" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    PÊCHE-DE-VIGNE
+                </button>
+            </div>
+
+            <!-- Parfum 33: Pistache -->
+            <div id="parfum-Pistache" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Pistache.png" alt="Parfum Pistache" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    PISTACHE
+                </button>
+            </div>
+
+            <!-- Parfum 34: Poire -->
+            <div id="parfum-Poire" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Poire.png" alt="Parfum Poire" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    POIRE
+                </button>
+            </div>
+
+            <!-- Parfum 35: Pomme-verte -->
+            <div id="parfum-Pomme-verte" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Pomme-verte.png" alt="Parfum Pomme-verte" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    POMME-VERTE
+                </button>
+            </div>
+
+            <!-- Parfum 36: Praliné -->
+            <div id="parfum-Praliné" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Praliné.png" alt="Parfum Praliné" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    PRALINÉ
+                </button>
+            </div>
+
+            <!-- Parfum 37: Réglisse -->
+            <div id="parfum-Reglisse" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Reglisse.png" alt="Parfum Réglisse" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    RÉGLISSE
+                </button>
+            </div>
+
+            <!-- Parfum 38: Rhum-Raisin -->
+            <div id="parfum-Rhum-Raisin" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Rhum-Raisin.png" alt="Parfum Rhum-Raisin" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    RHUM-RAISIN
+                </button>
+            </div>
+
+            <!-- Parfum 38: Schtroumpf -->
+            <div id="parfum-Schtroumpf" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Schtroumpf.png" alt="Parfum Schtroumpf" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    SCHTROUMPF
+                </button>
+            </div>
+
+            <!-- Parfum 38: Smarties -->
+            <div id="parfum-Smarties" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Smarties.png" alt="Parfum Smarties" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    SMARTIES
+                </button>
+            </div>
+
+            <!-- Parfum 38: Snikers -->
+            <div id="parfum-Snikers" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Snikers.png" alt="Parfum Snikers" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    SNIKERS
+                </button>
+            </div>
+
+            <!-- Parfum 38: Spéculoos -->
+            <div id="parfum-Speculoos" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Speculoos.png" alt="Parfum Spéculoos" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    SPÉCULOOS
+                </button>
+            </div>
+
+            <!-- Parfum 38: Straciatella -->
+            <div id="parfum-Straciatella" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Straciatella.png" alt="Parfum Straciatella" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    STRACIATELLA
+                </button>
+            </div>
+
+            <!-- Parfum 38: Tiramisu -->
+            <div id="parfum-Tiramisu" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Tiramisu.png" alt="Parfum Tiramisu" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    TIRAMISU
+                </button>
+            </div>
+
+            <!-- Parfum 38: vanille -->
+            <div id="parfum-vanille" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="vanille.png" alt="Parfum vanille" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    VANILLE
+                </button>
+            </div>
+            <!-- Parfum 38: Violette -->
+            <div id="parfum-Violette" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Violette.png" alt="Parfum Violette" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    VIOLETTE
+                </button>
+            </div>
+            <!-- Parfum 38: Yaourt -->
+            <div id="parfum-Yaourt" class="parfum-item flex flex-col items-center relative cursor-pointer" onclick="selectParfum(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Yaourt.png" alt="Parfum Yaourt" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                    <span class="text-custom-red hidden">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    YAOURT
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bouton Continuer flottant -->
+    <div class="fixed bottom-4 w-full max-w-md px-4">
+        <button onclick="location.href='Page-supp-glace.html'"
+            class="w-full py-5 px-6 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-xl uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+            CONTINUER
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const parfumItems = document.querySelectorAll('.parfum-item');
+
+            parfumItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const checkboxSpan = item.querySelector('.checkbox span');
+                    checkboxSpan.classList.toggle('hidden');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

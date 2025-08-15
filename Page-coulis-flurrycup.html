@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flurrycup - Coulis</title>
+    <!-- Inclure Tailwind CSS pour le style -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuration de la couleur personnalisée -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-red': '#d11d38',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .coulis-item {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .coulis-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white flex flex-col items-center p-4 pb-24">
+
+    <!-- Conteneur principal pour centrer le contenu -->
+    <div class="w-full max-w-md">
+        <!-- En-tête de la page -->
+        <div class="flex justify-between items-center mb-6 mt-4">
+            <h1 class="text-4xl font-extrabold text-custom-red uppercase">
+                FLURRYCUP - COULIS
+            </h1>
+            <button onclick="history.back()"
+                class="py-2 px-6 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                RETOUR
+            </button>
+        </div>
+
+        <!-- Grille des produits -->
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Coulis 1: Caramel -->
+            <div id="coulis-caramel" class="coulis-item flex flex-col items-center relative cursor-pointer" onclick="toggleSelection(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="coulis-caramel.png" alt="Coulis Caramel" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full hidden">
+                    <span class="text-custom-red">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    CARAMEL
+                </button>
+            </div>
+
+            <!-- Coulis 2: Nutella -->
+            <div id="coulis-nutella" class="coulis-item flex flex-col items-center relative cursor-pointer" onclick="toggleSelection(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="coulis-nutella.png" alt="Coulis Nutella" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full hidden">
+                    <span class="text-custom-red">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    NUTELLA
+                </button>
+            </div>
+
+            <!-- Coulis 3: Chocolat -->
+            <div id="coulis-chocolat" class="coulis-item flex flex-col items-center relative cursor-pointer" onclick="toggleSelection(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="coulis-chocolat.png" alt="Coulis Chocolat" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full hidden">
+                    <span class="text-custom-red">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    CHOCOLAT
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bouton Continuer flottant -->
+    <div class="fixed bottom-4 w-full max-w-md px-4">
+        <button onclick="location.href='Page-brisure-flurrycup.html'"
+            class="w-full py-5 px-6 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-xl uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+            CONTINUER
+        </button>
+    </div>
+
+    <script>
+        function toggleSelection(selectedItem) {
+            // Désélectionner toutes les autres options de coulis
+            document.querySelectorAll('.coulis-item').forEach(item => {
+                if (item !== selectedItem) {
+                    item.querySelector('.checkbox').classList.add('hidden');
+                }
+            });
+
+            // Basculer la sélection de l'élément cliqué
+            const checkbox = selectedItem.querySelector('.checkbox');
+            checkbox.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

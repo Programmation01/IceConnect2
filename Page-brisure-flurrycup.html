@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flurrycup - Brisure</title>
+    <!-- Inclure Tailwind CSS pour le style -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuration de la couleur personnalisée -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-red': '#d11d38',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white flex flex-col items-center p-4 pb-24">
+
+    <!-- Conteneur principal pour centrer le contenu -->
+    <div class="w-full max-w-md">
+        <!-- En-tête de la page -->
+        <div class="flex justify-between items-center mb-6 mt-4">
+            <h1 class="text-4xl font-extrabold text-custom-red uppercase">
+                FLURRYCUP - BRISURE
+            </h1>
+            <button onclick="history.back()"
+                class="py-2 px-6 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                RETOUR
+            </button>
+        </div>
+
+        <!-- Grille des produits -->
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Brissure 1: Oreo -->
+            <div id="brissure-oreo" class="brissure-item flex flex-col items-center relative cursor-pointer" onclick="toggleSelection(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Oreo.png" alt="Brisure Oreo" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full hidden">
+                    <span class="text-custom-red">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    OREO
+                </button>
+            </div>
+
+            <!-- Brissure 2: M&M's -->
+            <div id="brissure-mms" class="brissure-item flex flex-col items-center relative cursor-pointer" onclick="toggleSelection(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="MMS.png" alt="Brisure M&M's" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full hidden">
+                    <span class="text-custom-red">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    M&M'S
+                </button>
+            </div>
+
+            <!-- Brissure 3: Macadamia -->
+            <div id="brissure-macadamia" class="brissure-item flex flex-col items-center relative cursor-pointer" onclick="toggleSelection(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Macadamia.png" alt="Brisure Macadamia" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full hidden">
+                    <span class="text-custom-red">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    MACADAMIA
+                </button>
+            </div>
+
+            <!-- Brissure 4: Speculoos -->
+            <div id="brissure-speculoos" class="brissure-item flex flex-col items-center relative cursor-pointer" onclick="toggleSelection(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Speculoos.png" alt="Brisure Speculoos" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full hidden">
+                    <span class="text-custom-red">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    SPECULOOS
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bouton Continuer flottant -->
+    <div class="fixed bottom-4 w-full max-w-md px-4">
+        <button onclick="location.href='Page-parfums-flurrycup.html'"
+            class="w-full py-5 px-6 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-xl uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+            CONTINUER
+        </button>
+    </div>
+
+    <script>
+        function toggleSelection(selectedItem) {
+            // Désélectionner toutes les autres brisures
+            document.querySelectorAll('.brissure-item').forEach(item => {
+                if (item !== selectedItem) {
+                    item.querySelector('.checkbox').classList.add('hidden');
+                }
+            });
+
+            // Basculer la sélection de l'élément cliqué
+            const checkbox = selectedItem.querySelector('.checkbox');
+            checkbox.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

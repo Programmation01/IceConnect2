@@ -1,0 +1,49 @@
+Abricot.png
+Amaréna.png
+Ananas.png
+banane.png
+Bounty.png
+cafe.png
+Cappucino.png
+Caramel Beurre salé.png
+Cassis.png
+Chocolat blanc.png
+Chocolat.png
+Citron vert.png
+Citron.png
+Coco.png
+Cookie.png
+Extra noir.png
+Fraise.png
+framboise.png
+Grenade.png
+Kinder.png
+Kiwi.png
+Letchi.png
+Macadamia.png
+Mandarine.png
+Mangue.png
+Marron.png
+melon.png
+Menthe-chocolat.png
+Mûre.png
+Nougat.png
+Nutella.png
+Oreo.png
+Passion.png
+Pêche de vigne.png
+Pistache.png
+Poire.png
+Pomme verte.png
+Praliné.png
+Reglisse.png
+Rhum-Raisin.png
+Schtroumpf.png
+Smarties.png
+Snikers.png
+Speculoos.png
+Straciatella.png
+Tiramisu.png
+vanille.png
+Violette.png
+Yaourt.png

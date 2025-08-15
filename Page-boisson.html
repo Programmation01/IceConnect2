@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boissons</title>
+    <!-- Inclure Tailwind CSS pour le style -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuration de la couleur personnalisée -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-red': '#d11d38',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .product-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .product-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .selected {
+            border-color: #d11d38; /* Couleur de bordure pour les éléments sélectionnés */
+            box-shadow: 0 0 0 4px #d11d38;
+        }
+    </style>
+</head>
+<body class="bg-white flex flex-col items-center p-4 pb-24 relative">
+
+    <!-- Conteneur principal pour centrer le contenu -->
+    <div class="w-full max-w-md">
+        <!-- En-tête de la page -->
+        <div class="flex justify-between items-center mb-6 mt-4">
+            <h1 class="text-4xl font-extrabold text-custom-red uppercase">
+                BOISSON
+            </h1>
+            <button onclick="history.back()"
+                class="py-2 px-4 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-sm uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                RETOUR
+            </button>
+        </div>
+
+        <!-- Grille des produits -->
+        <div class="grid grid-cols-2 gap-4">
+            <!-- Produit 1: Eau 50cl -->
+            <div class="product-card relative flex flex-col items-center cursor-pointer" onclick="toggleSelection(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="50cl.png" alt="Bouteille d'eau 50cl" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full hidden">
+                    <span class="text-custom-red">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    EAU 50CL
+                </button>
+            </div>
+
+            <!-- Produit 2: Eau 1L -->
+            <div class="product-card relative flex flex-col items-center cursor-pointer" onclick="toggleSelection(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="1L.png" alt="Bouteille d'eau 1L" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full hidden">
+                    <span class="text-custom-red">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    EAU 1L
+                </button>
+            </div>
+
+            <!-- Produit 3: Ice Tea -->
+            <div class="product-card relative flex flex-col items-center cursor-pointer" onclick="toggleSelection(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Ice.png" alt="Canette d'Ice Tea" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full hidden">
+                    <span class="text-custom-red">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    ICE TEA
+                </button>
+            </div>
+
+            <!-- Produit 4: Coca Cola -->
+            <div class="product-card relative flex flex-col items-center cursor-pointer" onclick="toggleSelection(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Coca.png" alt="Canette de Coca Cola" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full hidden">
+                    <span class="text-custom-red">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    COCA COLA
+                </button>
+            </div>
+
+            <!-- Produit 5: Heineken -->
+            <div class="product-card relative flex flex-col items-center cursor-pointer" onclick="toggleSelection(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Heineken.png" alt="Bouteille de Heineken" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full hidden">
+                    <span class="text-custom-red">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    HEINEKEN
+                </button>
+            </div>
+
+            <!-- Produit 6: Desperados -->
+            <div class="product-card relative flex flex-col items-center cursor-pointer" onclick="toggleSelection(this)">
+                <div class="w-full h-auto rounded-3xl border-4 border-custom-red overflow-hidden mb-2">
+                    <img src="Desperados.png" alt="Canette Desperados" class="w-full h-auto">
+                </div>
+                <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full hidden">
+                    <span class="text-custom-red">✓</span>
+                </div>
+                <button class="w-full py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                    DESPERADOS
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bouton Continuer flottant -->
+    <div class="fixed bottom-4 w-full max-w-md px-4">
+        <a href="Page-recap.html">
+            <button class="w-full py-5 px-6 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-xl uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                CONTINUER
+            </button>
+        </a>
+    </div>
+
+    <script>
+        function toggleSelection(item) {
+            const checkbox = item.querySelector('.checkbox');
+            checkbox.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

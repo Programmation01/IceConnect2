@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Glacier - Accueil</title>
+    <!-- Inclure Tailwind CSS pour le style -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuration de la couleur personnalisée -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-red': '#d11d38',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white flex flex-col items-center min-h-screen p-4">
+
+    <!-- Conteneur principal pour centrer le contenu -->
+    <div class="w-full max-w-md text-center flex flex-col items-center">
+        <!-- Image principale du cornet de glace -->
+        <div class="w-48 h-48 rounded-full border-4 border-custom-red overflow-hidden flex items-center justify-center mt-8 mb-6">
+            <img src="LE GLACIER.png" alt="Cornet de glace Le Glacier" class="object-cover w-full h-full">
+        </div>
+        
+        <!-- Messages de bienvenue -->
+        <p class="text-3xl font-extrabold text-black mb-2">
+            Bienvenue !
+        </p>
+        <p class="text-xl text-gray-700 mb-8">
+            Compose ta commande rafraîchissante
+        </p>
+
+        <!-- Image du magasin -->
+        <div class="w-full rounded-2xl border-4 border-custom-red overflow-hidden mb-8">
+            <img src="image.png" alt="Photo du magasin Le Glacier" class="w-full h-auto">
+        </div>
+
+        <!-- Bouton pour démarrer la commande -->
+        <a href="Page-produit.html">
+            <button class="w-full py-5 px-6 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-xl uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none mb-6">
+                Commencer ma commande
+            </button>
+        </a>
+
+        <!-- Conteneur des boutons de langue -->
+        <div class="flex justify-between w-full space-x-4">
+            <!-- Bouton pour la langue française -->
+            <button lang="fr" class="flex-1 py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                Français 🇫🇷
+            </button>
+            
+            <!-- Bouton pour la langue anglaise -->
+            <button lang="en" class="flex-1 py-4 px-2 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+                English 🇬🇧
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>

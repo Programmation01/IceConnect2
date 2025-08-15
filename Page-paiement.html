@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Méthode de paiement</title>
+    <!-- Inclure Tailwind CSS pour le style -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuration de la couleur personnalisée -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-red': '#d11d38',
+                        'custom-red-light': '#fef2f2',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white flex flex-col items-center p-4 pb-24">
+
+    <!-- Conteneur principal pour centrer le contenu -->
+    <div class="w-full max-w-md">
+        <!-- En-tête de la page -->
+        <h1 class="text-4xl font-extrabold text-custom-red uppercase text-center mb-8 mt-4">
+            MÉTHODE DE PAIEMENT
+        </h1>
+
+        <!-- Carte de la 1ère option: Carte bancaire -->
+        <div id="paiement-cb" class="paiement-item bg-white border-4 border-custom-red rounded-3xl p-4 mb-4 relative cursor-pointer shadow-lg" onclick="selectPaiement(this)">
+            <div class="flex justify-between items-start mb-2">
+                <h2 class="text-2xl font-bold text-custom-red italic">Carte bancaire</h2>
+                <!-- Placeholder for bank card logos -->
+                <img src="https://placehold.co/100x20/D11D38/FFFFFF?text=VISA+MASTERCARD" alt="Logos cartes bancaires" class="h-5 mt-1">
+            </div>
+            <p class="text-base text-gray-700">RÈGLEMENT DIRECTEMENT ICI 5 € MINIMUM</p>
+            <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                <span class="text-custom-red hidden">✓</span>
+            </div>
+        </div>
+
+        <!-- Carte de la 2ème option: Apple Pay / Google Pay -->
+        <div id="paiement-mobile" class="paiement-item bg-white border-4 border-custom-red rounded-3xl p-4 mb-4 relative cursor-pointer shadow-lg" onclick="selectPaiement(this)">
+            <div class="flex justify-between items-start mb-2">
+                <h2 class="text-2xl font-bold text-custom-red italic">Apple Pay / Google Pay</h2>
+                <!-- Placeholder for payment logos -->
+                <img src="https://placehold.co/100x20/D11D38/FFFFFF?text=Apple+Pay+Google+Pay" alt="Logos Apple Pay Google Pay" class="h-5 mt-1">
+            </div>
+            <p class="text-base text-gray-700">RÈGLEMENT DIRECTEMENT ICI 5 € MINIMUM</p>
+            <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                <span class="text-custom-red hidden">✓</span>
+            </div>
+        </div>
+
+        <!-- Carte de la 3ème option: Espèce -->
+        <div id="paiement-espece" class="paiement-item bg-white border-4 border-custom-red rounded-3xl p-4 mb-8 relative cursor-pointer shadow-lg" onclick="selectPaiement(this)">
+            <div class="flex justify-between items-start mb-2">
+                <h2 class="text-2xl font-bold text-custom-red italic">ESPECE</h2>
+                <!-- Placeholder for money icon -->
+                <span role="img" aria-label="emoji billet" class="text-xl">💰</span>
+            </div>
+            <p class="text-base text-gray-700">RÈGLEMENT AU COMPTOIR</p>
+            <div class="checkbox absolute top-2 right-2 w-8 h-8 flex items-center justify-center bg-white border-4 border-custom-red rounded-full">
+                <span class="text-custom-red hidden">✓</span>
+            </div>
+        </div>
+
+        <!-- Bouton Valider flottant -->
+        <div class="fixed bottom-4 w-full max-w-md px-4">
+            <button onclick="location.href='Page-N°CO.html'"
+                class="w-full py-5 px-6 bg-custom-red rounded-full text-white font-bold text-xl uppercase transition duration-300 ease-in-out hover:bg-custom-red focus:outline-none">
+                VALIDER LA MÉTHODE DE PAIEMENT
+            </button>
+        </div>
+    </div>
+
+    <!-- Bouton Retour flottant en bas -->
+    <div class="fixed bottom-20 w-full max-w-md px-4">
+        <button onclick="history.back()"
+            class="w-full py-4 px-6 bg-white border-4 border-custom-red rounded-full text-custom-red font-bold text-lg uppercase transition duration-300 ease-in-out hover:bg-custom-red hover:text-white focus:outline-none">
+            RETOUR
+        </button>
+    </div>
+
+    <script>
+        function selectPaiement(selectedItem) {
+            const allItems = document.querySelectorAll('.paiement-item');
+
+            allItems.forEach(item => {
+                const checkboxSpan = item.querySelector('.checkbox span');
+                checkboxSpan.classList.add('hidden'); // Cacher toutes les coches
+            });
+            
+            // Afficher la coche pour l'élément sélectionné
+            selectedItem.querySelector('.checkbox span').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
